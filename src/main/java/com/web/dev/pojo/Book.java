@@ -8,7 +8,7 @@ public class Book {
     String name;
     String format;
     int valid;
-    int ctime;
+    long ctime;
 
     public int getId() {
         return id;
@@ -42,11 +42,11 @@ public class Book {
         this.valid = valid;
     }
 
-    public int getCtime() {
+    public long getCtime() {
         return ctime;
     }
 
-    public void setCtime(int ctime) {
+    public void setCtime(long ctime) {
         this.ctime = ctime;
     }
 

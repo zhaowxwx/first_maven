@@ -1,7 +1,9 @@
 package com.web.dev.controller;
 
 import com.web.dev.pojo.Book;
+import com.web.dev.pojo.User;
 import com.web.dev.service.BookService;
+import com.web.dev.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +30,9 @@ public class HelloController {
     @Resource
     private BookService bookService;
 
+    @Resource
+    private UserService userService;
+
     @RequestMapping("/sayhello")
     public String sayHello(@RequestParam(name = "NAME",required = false) String name){
         logger.info("请求参数为：name={}",name);
@@ -37,15 +42,32 @@ public class HelloController {
     @RequestMapping("/insertbook")
     public String insertBook(@RequestParam("name") String name) {
         Book book = new Book();
-        String str = "";
         book.setName("");
         book.setFormat("pdf");
         if (name != null && name.length() != 0) {
             book.setName(name);
             bookService.insertBook(book);
-            str = bookService.findBookById(1).toString();
+            Book res = bookService.findBookById(2);
+            logger.info("#result={}",res);
         }
-        return "success" + str;
+        return "success";
+    }
 
+
+    @RequestMapping("/addUser")
+    public String addUser(@RequestParam("name") String name,@RequestParam("sex") int sex,
+                          @RequestParam("age") int age) {
+        User user = new User();
+        user.setName(name);
+        user.setAge(age);
+        user.setSex(sex);
+        userService.insertUser(user);
+        return "success";
+    }
+
+    @RequestMapping("/findUser")
+    public String findUser(@RequestParam("mingzi") String name) {
+        User user = userService.findUser(name);
+        return user.toString();
     }
 }

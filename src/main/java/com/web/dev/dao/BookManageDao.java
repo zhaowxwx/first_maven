@@ -19,6 +19,6 @@ public interface BookManageDao {
     @Insert("insert into " + TABLE + FIELDS + "values" + VALUES)
     public void insertBook(@RequestParam("book")Book book);
 
-    @Select("select * from " + TABLE + " where id = #{id}")
+    @Select("select * from " + TABLE + " where id=#{id}")
     public Book selectBookById(@RequestParam("id") int id);
 }
