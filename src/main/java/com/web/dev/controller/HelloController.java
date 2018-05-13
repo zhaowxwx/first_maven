@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 /**
  * Created by Administrator on 2018/5/12/0012.
  * https://www.cnblogs.com/Sinte-Beuve/p/5730553.html
+ * SSM:https://www.cnblogs.com/zyw-205520/p/4771253.html
  * 首先配置pom文件，引入需要的包
  * 然后配置web.xml文件
  * 随后配置spring-mvc.xml文件
