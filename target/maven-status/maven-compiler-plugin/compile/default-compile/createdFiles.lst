@@ -1,0 +1,7 @@
+com\web\dev\service\UserService.class
+com\web\dev\pojo\User.class
+com\web\dev\service\BookService.class
+com\web\dev\dao\UserDao.class
+com\web\dev\dao\BookManageDao.class
+com\web\dev\controller\HelloController.class
+com\web\dev\pojo\Book.class
